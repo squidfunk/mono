@@ -26,7 +26,7 @@
       ]
     },
     {
-      "name": "Application",
+      "name": "Chrome",
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "Start and watch for changes",
