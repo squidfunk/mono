@@ -1,0 +1,52 @@
+{
+  "name": "@squidfunk/eslint-config",
+  "version": "0.0.0",
+  "description": "Preset for ESLint",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "presets/eslint-config"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "@squidfunk/mono-resolve": "*",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-unicorn": "^48.0.1"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*"
+  },
+  "peerDependencies": {
+    "eslint": "8.x"
+  }
+}

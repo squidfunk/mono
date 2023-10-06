@@ -1,0 +1,45 @@
+{
+  "name": "@squidfunk/mono-changelog",
+  "version": "0.0.0",
+  "description": "Changelog generator",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "packages/mono-changelog"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "run-s build:*",
+    "build:ts": "tsc",
+    "build:hbs": "copyup 'src/**/*.hbs' dist",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s clean && npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "@squidfunk/mono-commit-convention": "*",
+    "@squidfunk/mono-commit-parser": "*"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*"
+  }
+}

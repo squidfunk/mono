@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build for debugging",
+      "type": "shell",
+      "command": "npx tsc --build tsconfig.debug.json",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "label": "Build for debugging and watch for changes",
+      "type": "shell",
+      "command": "npx tsc --build tsconfig.debug.json --watch",
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "silent"
+      },
+      "problemMatcher": [
+        "$tsc-watch"
+      ]
+    },
+    {
+      "label": "Clean for debugging",
+      "type": "shell",
+      "command": "npx tsc --build tsconfig.debug.json --clean",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "label": "Start and watch for changes",
+      "type": "shell",
+      "command": "npx mono-esbuild --watch",
+      "options": {
+        "cwd": "${command:mono.package}"
+      },
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": [
+        "$esbuild-watch"
+      ]
+    },
+    {
+      "label": "Terminate background tasks",
+      "command": "${command:mono.task.terminate.background}"
+    }
+  ]
+}

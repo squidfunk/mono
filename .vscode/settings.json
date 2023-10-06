@@ -1,0 +1,12 @@
+{
+  "search.exclude": {
+    "**/.eslintcache": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/tmp": true
+  },
+  "search.followSymlinks": false,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@squidfunk/mono",
+  "version": "0.0.0",
+  "description": "Mono repository utilities",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git"
+  },
+  "workspaces": [
+    "./editors/*",
+    "./packages/*",
+    "./presets/*"
+  ],
+  "scripts": {
+    "prepare": "run-s --npm-path npm prepare:*",
+    "prepare:patch": "ts-patch install -s",
+    "prepare:hooks": "husky install",
+    "release": "run-s --npm-path npm release:*",
+    "release:version": "lerna version --create-release github",
+    "release:publish": "lerna publish from-package --yes",
+    "upgrade": "run-s --npm-path npm upgrade:*",
+    "upgrade:version": "lerna exec 'ncu --upgrade --filterVersion \"/^\\^/\"'",
+    "upgrade:install": "npm install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@types/node": "^20.6.5",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.50.0",
+    "husky": "^8.0.3",
+    "lerna": "^7.3.0",
+    "npm-check-updates": "^16.14.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "ts-patch": "^3.0.2",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "@squidfunk/stylelint-config",
+  "version": "0.0.0",
+  "description": "Preset for Stylelint",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "presets/stylelint-config"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.8",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-scss": "^5.2.1",
+    "stylelint-stylistic": "^0.4.3"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-resolve": "*",
+    "@squidfunk/mono-transform": "*",
+    "stylelint": "^15.10.3"
+  },
+  "peerDependencies": {
+    "stylelint": "15.x"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "no-null/no-null": "off",
+    "quotes": "off"
+  }
+}

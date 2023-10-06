@@ -1,0 +1,57 @@
+{
+  "name": "@squidfunk/mono-serve",
+  "version": "0.0.0",
+  "description": "Static file server and watcher",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "packages/mono-serve"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": "./dist/_/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "run-s build:*",
+    "build:tsc": "tsc",
+    "build:svg": "copyup 'src/**/*.svg' dist",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "@squidfunk/mono-resolve": "*",
+    "chalk": "^5.3.0",
+    "chokidar": "^3.5.3",
+    "commander": "^11.0.0",
+    "connect": "^3.7.0",
+    "http-proxy-middleware": "^3.0.0-beta.0",
+    "http-terminator": "^3.2.0",
+    "kebab-case": "^1.0.2",
+    "serve-handler": "^6.1.5",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*",
+    "@types/connect": "^3.4.36",
+    "@types/serve-handler": "^6.1.1",
+    "@types/ws": "^8.5.5"
+  }
+}

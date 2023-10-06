@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    { "path": "./packages/mono-chance/tsconfig.debug.json" },
+    { "path": "./packages/mono-changelog/tsconfig.debug.json" },
+    { "path": "./packages/mono-commit-convention/tsconfig.debug.json" },
+    { "path": "./packages/mono-commit-parser/tsconfig.debug.json" },
+    { "path": "./packages/mono-esbuild/tsconfig.debug.json" },
+    { "path": "./packages/mono-jasmine/tsconfig.debug.json" },
+    { "path": "./packages/mono-karma/tsconfig.debug.json" },
+    { "path": "./packages/mono-optimize/tsconfig.debug.json" },
+    { "path": "./packages/mono-resolve/tsconfig.debug.json" },
+    { "path": "./packages/mono-serve/tsconfig.debug.json" },
+    { "path": "./packages/mono-transform/tsconfig.debug.json" },
+    { "path": "./presets/eslint-config/tsconfig.debug.json" },
+    { "path": "./presets/stylelint-config/tsconfig.debug.json" }
+  ],
+  "exclude": [
+    "**/dist",
+    "**/src",
+    "**/tests",
+    "**/tmp"
+  ]
+}

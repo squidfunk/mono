@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "lib": ["dom", "esnext"],
+    "outDir": "./dist"
+  },
+  "include": [
+    "./src",
+    "./typings"
+  ]
+}

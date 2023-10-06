@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "File",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Build for debugging",
+      "program": "${file}",
+      "outFiles": [
+        "${workspaceFolder}/packages/*/dist/**/*.js"
+      ]
+    },
+    {
+      "name": "Test",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Build for debugging",
+      "runtimeExecutable": "npx",
+      "program": "mono-jasmine",
+      "args": ["${file}"],
+      "cwd": "${command:mono.package}",
+      "resolveSourceMapLocations": [
+        "!**/internal/deps/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "name": "Application",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "Start and watch for changes",
+      "postDebugTask": "Terminate background tasks",
+      "runtimeArgs": [
+        "--disable-features=Translate",
+        "--incognito"
+      ],
+      "url": "http://localhost:8000/",
+      "webRoot": "${command:mono.package.output}"
+    },
+    {
+      "name": "Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "preLaunchTask": "Build for debugging",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/editors/vscode"
+      ],
+      "env": {
+        "NODE_OPTIONS": "--no-deprecation"
+      }
+    }
+  ]
+}

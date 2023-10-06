@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
+  "packages": [
+    "packages/*",
+    "presets/*",
+    "."
+  ],
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com/",
+      "private": false,
+      "message": "mono:build - publish"
+    },
+    "version": {
+      "changelogPreset": "@squidfunk/mono-changelog",
+      "conventionalCommits": true,
+      "forceGitTag": true
+    }
+  },
+  "ignoreChanges": [
+    "**/tests/**",
+    "**/*.md",
+    "**/.eslint*",
+    "**/package-lock.json",
+    "**/tsconfig.debug.json",
+    ".github",
+    ".husky",
+    ".vscode",
+    ".commitlintrc",
+    ".editorconfig",
+    ".gitignore",
+    ".npmrc",
+    "lerna.json"
+  ]
+}

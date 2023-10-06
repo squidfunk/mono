@@ -1,0 +1,4 @@
+{
+  "extends": ["@squidfunk/eslint-config"],
+  "root": true
+}

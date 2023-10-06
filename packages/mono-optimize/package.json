@@ -1,0 +1,43 @@
+{
+  "name": "@squidfunk/mono-optimize",
+  "version": "0.0.0",
+  "description": "Asset optimizer",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "packages/mono-optimize"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*",
+    "@types/html-minifier": "^4.0.3"
+  }
+}

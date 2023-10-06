@@ -1,0 +1,55 @@
+{
+  "name": "@squidfunk/mono-esbuild",
+  "version": "0.0.0",
+  "description": "TypeScript bundler",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "packages/mono-esbuild"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": "./dist/_/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "@squidfunk/mono-optimize": "*",
+    "@squidfunk/mono-resolve": "*",
+    "@squidfunk/mono-serve": "*",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "esbuild": "^0.19.3",
+    "glob": "^10.3.7",
+    "rimraf": "^5.0.1",
+    "sass": "^1.68.0"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*"
+  },
+  "peerDependencies": {
+    "lerna": "7.x",
+    "typescript": "5.x"
+  }
+}

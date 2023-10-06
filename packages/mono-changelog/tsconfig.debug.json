@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "rootDir": "./src"
+  },
+  "references": [
+    { "path": "../mono-commit-convention/tsconfig.debug.json" },
+    { "path": "../mono-commit-parser/tsconfig.debug.json" },
+    { "path": "../mono-transform/tsconfig.debug.json" }
+  ]
+}

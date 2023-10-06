@@ -1,0 +1,126 @@
+{
+  "name": "mono",
+  "version": "0.0.0",
+  "description": "Addons for Visual Studio Code",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "editors/vscode"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "mono-esbuild --clean",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "setup": "run-s build setup:*",
+    "setup:vsce": "vsce package --no-dependencies --out dist",
+    "setup:code": "code-insiders --install-extension dist/*.vsix"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-esbuild": "*",
+    "@squidfunk/mono-resolve": "*",
+    "@squidfunk/mono-transform": "*",
+    "@types/vscode": "^1.82.0",
+    "@vscode/vsce": "^2.21.0"
+  },
+  "peerDependencies": {
+    "vscode": "*"
+  },
+  "peerDependenciesMeta": {
+    "vscode": {
+      "optional": true
+    }
+  },
+  "publisher": "squidfunk",
+  "displayName": "squidfunk/mono",
+  "icon": "etc/icon.png",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "activationEvents": [
+    "omCommand:mono:*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "mono.package",
+        "title": "Determine package folder"
+      },
+      {
+        "command": "mono.package.source",
+        "title": "Determine package source folder"
+      },
+      {
+        "command": "mono.package.output",
+        "title": "Determine package output folder"
+      },
+      {
+        "command": "mono.task.terminate.all",
+        "title": "Terminate all tasks"
+      },
+      {
+        "command": "mono.task.terminate.background",
+        "title": "Terminate background tasks"
+      }
+    ],
+    "problemPatterns": [
+      {
+        "name": "esbuild",
+        "regexp": "\\[([^\\s]+)\\]\\s([^\\n]+)\\s+([^\\s].*)[\\(:](\\d+)[:](\\d+)",
+        "severity": 1,
+        "message": 2,
+        "file": 3,
+        "line": 4,
+        "column": 5
+      }
+    ],
+    "problemMatchers": [
+      {
+        "name": "esbuild-watch",
+        "owner": "typescript",
+        "source": "ts",
+        "fileLocation": [
+          "relative",
+          "${command:mono.package}"
+        ],
+        "pattern": "$esbuild",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "^\\[watch\\] build started(.*)"
+          },
+          "endsPattern": {
+            "regexp": "^\\[watch\\] build finished(.*)"
+          }
+        }
+      }
+    ],
+    "themes": [
+      {
+        "label": "squidfunk",
+        "id": "squidfunk",
+        "uiTheme": "vs-dark",
+        "path": "theme/squidfunk.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@squidfunk/mono-chance",
+  "version": "0.0.0",
+  "description": "Random generator for testing",
+  "homepage": "https://github.com/squidfunk/mono",
+  "bugs": {
+    "url": "https://github.com/squidfunk/mono/issues",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Martin Donath",
+    "email": "martin.donath@squidfunk.com"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squidfunk/mono.git",
+    "directory": "packages/mono-chance"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist",
+    "./typings"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "run-p check:*",
+    "check:build": "tsc --noEmit",
+    "check:style": "eslint --cache .",
+    "clean": "rimraf dist",
+    "prepack": "npm run -s build",
+    "preversion": "npm run -s check"
+  },
+  "dependencies": {
+    "@types/chance": "^1.1.4",
+    "chance": "^1.1.11"
+  },
+  "devDependencies": {
+    "@squidfunk/mono-transform": "*"
+  }
+}

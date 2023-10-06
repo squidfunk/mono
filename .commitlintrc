@@ -1,0 +1,4 @@
+{
+  "extends": ["@squidfunk/mono-commit-convention"],
+  "parserPreset": "@squidfunk/mono-commit-parser"
+}
