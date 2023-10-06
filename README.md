@@ -1,11 +1,15 @@
 # Mono repository utilities
 
 This repository provides a collection of tools optimized for handling mono
-repositories. They reflect the workflows and standards I, @squidfunk, apply to
-my TypeScript projects, including those in organizations I own.
+repositories. They reflect the workflows and standards I, [@squidfunk], apply
+to my TypeScript projects, including those in organizations I own.
 
-- In order to use these tools, download them from GitHub Packages.
-- For adjustments, please fork this repository and tailor it to your preferences.
+- In order to use these tools, install them from [GitHub Packages].
+- For adjustments, please [fork the repository] and tailor it to your needs.
+
+  [@squidfunk]: https://github.com/squidfunk
+  [GitHub Packages]: https://github.com/squidfunk?tab=packages&repo_name=mono
+  [fork the repository]: https://github.com/squidfunk/mono/fork
 
 ## Installation
 
