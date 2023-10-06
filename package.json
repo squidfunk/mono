@@ -7,7 +7,7 @@
     "url": "https://github.com/squidfunk/mono/issues",
     "email": "martin.donath@squidfunk.com"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "author": {
     "name": "Martin Donath",
