@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-changelog",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Changelog generator",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -36,10 +36,10 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@squidfunk/mono-commit-convention": "*",
-    "@squidfunk/mono-commit-parser": "*"
+    "@squidfunk/mono-commit-convention": "^0.1.0",
+    "@squidfunk/mono-commit-parser": "^0.1.0"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "*"
+    "@squidfunk/mono-transform": "^0.1.0"
   }
 }

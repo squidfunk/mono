@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-transform",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "TypeScript transformer",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {

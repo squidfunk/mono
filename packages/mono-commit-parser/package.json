@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-commit-parser",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Commit message parser",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -33,6 +33,6 @@
     "preversion": "npm run -s check"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "*"
+    "@squidfunk/mono-transform": "^0.1.0"
   }
 }
