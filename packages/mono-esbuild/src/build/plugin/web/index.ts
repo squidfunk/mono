@@ -46,9 +46,19 @@ export const WebPlugin: Plugin = {
     const workdir = options.absWorkingDir!
 
     // Replace `preact/debug` in production
-    build.onLoad({ filter: /^preact\/debug$/ }, () => ({
-      loader: options.minify ? "empty" : "js"
-    }))
+    if (options.minify) {
+      const filter = /^preact\/debug$/
+
+      // Resolve using the ignore namespace
+      build.onResolve({ filter }, args => ({
+        path: args.path, namespace: "ignore"
+      }))
+
+      // Replace contents with empty string
+      build.onLoad({ filter, namespace: "ignore" }, () => ({
+        contents: ""
+      }))
+    }
 
     // Replace JavaScript and CSS URLs in HTML files
     build.onEnd(async ({ errors, metafile }) => {
