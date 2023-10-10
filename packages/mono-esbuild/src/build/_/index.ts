@@ -91,7 +91,6 @@ export function context(
   return esbuild.context({
     bundle: true,
     legalComments: "none",
-    mainFields: ["module", "main"],
     platform: "neutral",
     ...options,
     ...options?.format === "esm" && {
