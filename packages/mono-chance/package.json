@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-chance",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Random generator for testing",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -38,6 +38,6 @@
     "chance": "^1.1.11"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.0"
+    "@squidfunk/mono-transform": "^0.1.1"
   }
 }

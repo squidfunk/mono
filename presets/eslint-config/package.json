@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/eslint-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Preset for ESLint",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -34,7 +34,7 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@squidfunk/mono-resolve": "^0.1.0",
+    "@squidfunk/mono-resolve": "^0.1.1",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint-plugin-eslint-comments": "^3.2.0",
@@ -44,7 +44,7 @@
     "eslint-plugin-unicorn": "^48.0.1"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.0"
+    "@squidfunk/mono-transform": "^0.1.1"
   },
   "peerDependencies": {
     "eslint": "8.x"

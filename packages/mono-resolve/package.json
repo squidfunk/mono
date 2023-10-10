@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-resolve",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Resolvers for files and projects",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -38,7 +38,7 @@
     "glob": "^10.3.10"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.0",
+    "@squidfunk/mono-transform": "^0.1.1",
     "@types/glob": "^8.1.0"
   }
 }
