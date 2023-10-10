@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "get-tsconfig": "^4.7.2",
-    "glob": "^10.3.7"
+    "glob": "^10.3.10"
   },
   "devDependencies": {
     "@squidfunk/mono-transform": "^0.1.0",

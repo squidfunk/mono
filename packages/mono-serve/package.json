@@ -51,7 +51,7 @@
   "devDependencies": {
     "@squidfunk/mono-transform": "^0.1.0",
     "@types/connect": "^3.4.36",
-    "@types/serve-handler": "^6.1.1",
-    "@types/ws": "^8.5.5"
+    "@types/serve-handler": "^6.1.2",
+    "@types/ws": "^8.5.6"
   }
 }
