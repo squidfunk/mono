@@ -65,7 +65,7 @@ export function client(port: number): void {
 
     // Update document title
     document.title = state
-      ? "Waiting for connection ..."
+      ? "Waiting for connection"
       : title
   }
 
