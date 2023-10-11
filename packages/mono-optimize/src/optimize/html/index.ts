@@ -45,6 +45,7 @@ export namespace HTMLOptions {
     minifyCSS: true,
     minifyJS: true,
     removeComments: true,
+    removeAttributeQuotes: true,
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true
   }
