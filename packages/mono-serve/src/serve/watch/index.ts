@@ -53,7 +53,7 @@ function ignored(directory = "."): string[] {
  * @param paths - File paths
  * @param options - Options
  *
- * @returns Promise resolving with file system watcher
+ * @returns File system watcher
  */
 export function watch(
   paths: string | string[], options?: WatchOptions
