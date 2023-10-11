@@ -36,7 +36,7 @@ import { serve, watch } from "../serve"
  * Options
  */
 interface Options {
-  host?: string                        // Serve files on this host
+  hostname?: string                    // Serve files on this hostname
   port?: number                        // Serve files on this port
   watch?: boolean | string[]           // Watch files matching patterns
   fallback?: boolean                   // Use History API fallback
@@ -102,7 +102,7 @@ void program
 
   // Option: serve files on this host
   .option(
-    "-H, --host <string>",
+    "-H, --hostname <string>",
     "Serve files on this host"
   )
 

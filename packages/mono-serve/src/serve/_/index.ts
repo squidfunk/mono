@@ -57,7 +57,7 @@ export interface Server {
  * Options
  */
 interface Options {
-  host?: string                        // Serve files on this host
+  hostname?: string                    // Serve files on this hostname
   port?: number                        // Serve files on this port
   watch?: boolean | string[]           // Watch files matching patterns
   fallback?: boolean                   // Use History API fallback
@@ -76,7 +76,7 @@ interface Options {
  * @returns Handler function
  */
 function websocket(
-  directory: string, options: Required<Omit<Options, "host">>
+  directory: string, options: Required<Omit<Options, "hostname">>
 ): NextHandleFunction {
   return (req, res, next) => {
     const extension = path.extname(req.url!)
@@ -174,7 +174,7 @@ export async function serve(
   directory = ".", options: Options = {}
 ): Promise<Server> {
   const {
-    host = "0.0.0.0",
+    hostname = "127.0.0.1",
     port = 8000,
     watch = false,
     fallback = false
@@ -210,8 +210,8 @@ export async function serve(
   // Start application server
   const server = http.createServer(app)
     .on("close", () => websocketserver.close())
-    .listen(port, host, () => {
-      const url = chalk.underline(`http://${host}:${port}/`)
+    .listen(port, hostname, () => {
+      const url = chalk.underline(`http://${hostname}:${port}/`)
       console.log(`Serve ${chalk.green(directory)} at ${url}`)
     })
 
