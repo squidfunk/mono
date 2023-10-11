@@ -20,12 +20,47 @@
  * IN THE SOFTWARE.
  */
 
-import { Plugin } from "esbuild"
+import { BuildOptions, Metafile, Plugin } from "esbuild"
 import { glob } from "glob"
 import * as fs from "node:fs/promises"
 import * as path from "node:path"
 
 import { optimizeHTML } from "@squidfunk/mono-optimize"
+
+/* ----------------------------------------------------------------------------
+ * Helper functions
+ * ------------------------------------------------------------------------- */
+
+/**
+ * Minify HTML and inject preload directives
+ *
+ * @param data - HTML
+ * @param metafile - Metafile
+ * @param options - Options
+ *
+ * @returns Optimized HTML
+ */
+function optimize(
+  data: string, metafile: Metafile, options: BuildOptions
+): string {
+  const index = data.indexOf("<!-- esbuild:preload:js -->")
+  if (index !== -1) {
+    const chunks =
+      Object.keys(metafile.outputs)
+        .filter(name => /\.js$/.test(name))
+        .map(name => path.relative(options.outdir!, name))
+        .map(name => `<link rel="modulepreload" href="/${name}">`)
+
+    // Insert chunk URLs
+    data =
+      data.slice(0, index) +
+      chunks.join("\n") +
+      data.slice(index)
+  }
+
+  // Return optimized HTML
+  return optimizeHTML(data)
+}
 
 /* ----------------------------------------------------------------------------
  * Plugin
@@ -74,7 +109,7 @@ export const WebPlugin: Plugin = {
         // Read HTML file contents
         let data = await fs.readFile(source, "utf8")
         if (options.minify) {
-          data = optimizeHTML(data)
+          data = optimize(data, metafile, options)
 
           // Update JavaScript and CSS URLs
           for (const name in metafile?.outputs) {
