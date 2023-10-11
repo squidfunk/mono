@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.1 (2023-10-11)
+
+### Bug Fixes
+
+* 3dcd599 **mono-serve** - use 127.0.0.1 as default hostname
+
+
 ## 0.2.0 (2023-10-10)
 
 ### Features

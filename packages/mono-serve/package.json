@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-serve",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Static file server and watcher",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
