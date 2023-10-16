@@ -21,6 +21,7 @@
  */
 
 import { Plugin } from "esbuild"
+import * as fs from "node:fs/promises"
 import * as path from "node:path"
 
 import { packages } from "@squidfunk/mono-resolve"
@@ -37,8 +38,10 @@ import { packages } from "@squidfunk/mono-resolve"
  * mappings are expected to follow certain rules, which we use across the
  * entirety of our code base:
  *
- * - Imports referring to packages in scope are resolved to their corresponding
- *   `src` directories, so changes in sources always trigger a rebuild
+ * - Imports referring to packages in current scope are resolved to their `src`
+ *   directories, so changes in sources always trigger a rebuild. This does not
+ *   apply to packages which define the `exports` field in their `package.json`
+ *   manifest, as resolution would incur too much overhead.
  *
  * - Imports starting with `~` are always resolved to the `src` directory of
  *   the containing package, ignoring any path mappings in `tsconfig.json`
@@ -54,9 +57,26 @@ export const ResolvePlugin: Plugin = {
     const scopes   = packages()
     const [[name]] = scopes
 
-    // Resolve dependent packages within current scope
+    // Exclude packages that define exports from TypeScript source resolution
+    for (const [id, scope] of [...scopes]) {
+      const manifest = path.resolve(scope.path, "package.json")
+
+      // If the package has `exports`, bail out of TypeScript source resolution,
+      // as we'd need to check conditions when importing (e.g. browser or node),
+      // which is just infeasible for the tiny upside we get. In that case, the
+      // caller is responsible for ensuring that the package is being built.
+      const { exports } = JSON.parse(await fs.readFile(manifest, "utf8"))
+      if (typeof exports !== "undefined")
+        scopes.delete(id)
+    }
+
+    // Resolve dependent packages within current scope, if possible
     build.onResolve({ filter: new RegExp(name) }, async args => {
       const { path: id, ...rest } = args
+      if (!scopes.has(id))
+        return undefined
+
+      // Resolve package path
       return build.resolve(
         path.join(scopes.get(id)!.path, "src"),
         rest
