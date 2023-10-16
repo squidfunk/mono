@@ -40,7 +40,7 @@
     "@types/jasmine": "^5.1.0",
     "c8": "^8.0.1",
     "chalk": "^5.3.0",
-    "commander": "^11.0.0",
+    "commander": "^11.1.0",
     "glob": "^10.3.10",
     "jasmine": "^5.1.0",
     "jasmine-spec-reporter": "^7.0.0"
