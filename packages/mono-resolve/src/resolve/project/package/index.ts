@@ -64,7 +64,7 @@ export function packages(directory: string = "."): Map<string, Package> {
     }`)
 
   // Resolve project package specifiers
-  const specs = new Map([[name, manifest]])
+  const specs = new Map([[name, root]])
   for (const pattern of workspaces)
     for (const workspace of glob.sync(pattern, {
       cwd: root, absolute: true
