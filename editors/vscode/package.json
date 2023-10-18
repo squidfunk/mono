@@ -30,7 +30,7 @@
     "check": "run-p check:*",
     "check:build": "tsc --noEmit",
     "check:style": "eslint --cache .",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist *.tsbuildinfo",
     "setup": "run-s build setup:*",
     "setup:vsce": "vsce package --no-dependencies --out dist",
     "setup:code": "code-insiders --install-extension dist/*.vsix"

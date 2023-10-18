@@ -28,7 +28,7 @@
     "check": "run-p check:*",
     "check:build": "tsc --noEmit",
     "check:style": "eslint --cache .",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist *.tsbuildinfo",
     "prepack": "npm run -s build",
     "preversion": "npm run -s check"
   },
