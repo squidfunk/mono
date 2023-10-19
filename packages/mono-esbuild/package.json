@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-esbuild",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "TypeScript bundler",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -35,9 +35,9 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@squidfunk/mono-optimize": "^0.1.3",
-    "@squidfunk/mono-resolve": "^0.1.2",
-    "@squidfunk/mono-serve": "^0.2.2",
+    "@squidfunk/mono-optimize": "^0.1.4",
+    "@squidfunk/mono-resolve": "^0.1.3",
+    "@squidfunk/mono-serve": "^0.2.3",
     "chalk": "^5.3.0",
     "commander": "^11.1.0",
     "esbuild": "^0.19.4",
@@ -46,7 +46,7 @@
     "sass": "^1.69.3"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.2"
+    "@squidfunk/mono-transform": "^0.1.3"
   },
   "peerDependencies": {
     "lerna": "7.x",

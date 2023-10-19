@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-jasmine",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Jasmine test runner",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -35,8 +35,8 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@squidfunk/mono-resolve": "^0.1.2",
-    "@squidfunk/mono-serve": "^0.2.2",
+    "@squidfunk/mono-resolve": "^0.1.3",
+    "@squidfunk/mono-serve": "^0.2.3",
     "@types/jasmine": "^5.1.0",
     "c8": "^8.0.1",
     "chalk": "^5.3.0",
@@ -46,7 +46,7 @@
     "jasmine-spec-reporter": "^7.0.0"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.2",
+    "@squidfunk/mono-transform": "^0.1.3",
     "@types/glob": "^8.1.0"
   },
   "peerDependencies": {
