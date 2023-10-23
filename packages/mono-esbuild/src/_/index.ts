@@ -145,7 +145,7 @@ void program
 
   // Option: serve build artifacts on localhost
   .option(
-    "-w, --serve",
+    "-s, --serve",
     "Serve build artifacts on localhost"
   )
 
@@ -157,7 +157,7 @@ void program
 
   // Option: bundle packages in local scope only
   .option(
-    "-s, --scope",
+    "-x, --scope",
     "Bundle packages in local scope only"
   )
 
@@ -169,7 +169,7 @@ void program
 
   // Option: obfuscate by compiling to bytecode
   .option(
-    "-x, --obfuscate",
+    "-O, --obfuscate",
     "Obfuscate by compiling to bytecode"
   )
 
