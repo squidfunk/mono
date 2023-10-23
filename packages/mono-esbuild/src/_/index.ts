@@ -32,7 +32,7 @@ import {
   CleanPlugin,
   ObfuscatePlugin,
   ScopePlugin,
-  WatchPlugin,
+  ServePlugin,
   contextAt,
   recommended
 } from "../build"
@@ -46,6 +46,7 @@ import {
  */
 interface Options {
   watch?: boolean                      // Watch affected files for changes
+  serve?: boolean                      // Serve build artifacts on localhost
   clean?: boolean                      // Clean previously built artifacts
   scope?: boolean                      // Bundle packages in local scope only
   minify?: boolean                     // Minify source after bundling
@@ -88,9 +89,9 @@ async function handler(
       minify: options.minify
     })
 
-    // Option: watch affected files for changes
-    if (options.watch)
-      plugins.push(WatchPlugin)
+    // Option: serve build artifacts on localhost
+    if (options.serve)
+      plugins.push(ServePlugin)
 
     // Option: clean previously built artifacts
     if (options.clean)
@@ -140,6 +141,12 @@ void program
   .option(
     "-w, --watch",
     "Watch affected files for changes"
+  )
+
+  // Option: serve build artifacts on localhost
+  .option(
+    "-w, --serve",
+    "Serve build artifacts on localhost"
   )
 
   // Option: clean previously built artifacts

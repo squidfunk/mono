@@ -32,9 +32,9 @@ import { serve } from "@squidfunk/mono-serve"
  * ------------------------------------------------------------------------- */
 
 /**
- * Watch plugin for esbuild
+ * Serve plugin for esbuild
  */
-export const WatchPlugin: Plugin = {
+export const ServePlugin: Plugin = {
   name: "squidfunk/serve",
   async setup(build) {
     const options = build.initialOptions
