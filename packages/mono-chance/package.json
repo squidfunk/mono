@@ -34,7 +34,7 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@types/chance": "^1.1.4",
+    "@types/chance": "^1.1.5",
     "chance": "^1.1.11"
   },
   "devDependencies": {

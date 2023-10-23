@@ -44,7 +44,7 @@
   "devDependencies": {
     "@squidfunk/mono-resolve": "^0.1.3",
     "@squidfunk/mono-transform": "^0.1.3",
-    "stylelint": "^15.10.3"
+    "stylelint": "^15.11.0"
   },
   "peerDependencies": {
     "stylelint": "15.x"

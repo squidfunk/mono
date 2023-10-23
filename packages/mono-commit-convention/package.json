@@ -34,7 +34,7 @@
     "preversion": "npm run -s check"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^17.8.0",
+    "@commitlint/config-conventional": "^18.0.0",
     "@squidfunk/mono-resolve": "^0.1.3"
   },
   "devDependencies": {
