@@ -95,13 +95,17 @@ export const WebPlugin: Plugin = {
       }))
     }
 
+    // Retrieve HTML files and compute names of entrypoints
+    const files = glob.sync("**/*.html", { cwd: path.join(workdir, "src") })
+    if (files.length && options?.minify)
+      options.assetNames = options.entryNames = "[name].[hash]"
+
     // Replace JavaScript and CSS URLs in HTML files
     build.onEnd(async ({ errors, metafile }) => {
       if (errors.length || !metafile)
         return
 
       // Resolve and process HTML files
-      const files = glob.sync("**/*.html", { cwd: path.join(workdir, "src") })
       await Promise.all(files.map(async file => {
         const source = path.join(workdir, "src", file)
         const target = path.join(workdir, options.outdir!, file)

@@ -147,18 +147,10 @@ export async function contextAt(
       ? "browser"
       : "node"
 
-  // Compute names of entrypoints
-  const names =
-    platform === "browser" && options?.minify
-      ? "[name].[hash]"
-      : "[name]"
-
   // Create and return context
   return context({
     absWorkingDir: path.resolve(directory),
     entryPoints: entrypoints(directory, baseUrl!),
-    entryNames: names,
-    assetNames: names,
     alias: {
       "react":     "preact/compat",
       "react-dom": "preact/compat"
