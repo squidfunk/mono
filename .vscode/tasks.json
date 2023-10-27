@@ -45,7 +45,7 @@
     {
       "label": "Start and watch for changes",
       "type": "shell",
-      "command": "npx mono-esbuild --watch",
+      "command": "npx mono-esbuild --serve --watch",
       "options": {
         "cwd": "${command:mono.package}"
       },

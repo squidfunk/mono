@@ -82,34 +82,41 @@
         "title": "Terminate background tasks"
       }
     ],
-    "problemPatterns": [
-      {
-        "name": "esbuild",
-        "regexp": "\\[([^\\s]+)\\]\\s([^\\n]+)\\s+([^\\s].*)[\\(:](\\d+)[:](\\d+)",
-        "severity": 1,
-        "message": 2,
-        "file": 3,
-        "line": 4,
-        "column": 5
-      }
-    ],
     "problemMatchers": [
       {
+        "name": "esbuild",
+        "severity": "error",
+        "applyTo": "closedDocuments",
+        "source": "esbuild",
+        "fileLocation": "relative",
+        "pattern": [
+          {
+            "regexp": "^[✘▲] \\[([A-Z]+)\\] (.+)",
+            "severity": 1,
+            "message": 2
+          },
+          {
+            "regexp": "^(?:\\t| {4})(?!\\s)([^:]+)(?::([0-9]+))?(?::([0-9]+))?:$",
+            "file": 1,
+            "line": 2,
+            "column": 3
+          }
+        ]
+      },
+      {
         "name": "esbuild-watch",
-        "owner": "typescript",
-        "source": "ts",
-        "fileLocation": [
-          "relative",
-          "${command:mono.package}"
-        ],
-        "pattern": "$esbuild",
+        "base": "$esbuild",
+        "severity": "error",
+        "applyTo": "closedDocuments",
+        "source": "esbuild",
+        "fileLocation": "relative",
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
-            "regexp": "^\\[watch\\] build started(.*)"
+            "regexp": "ERROR|Built (.*) in"
           },
           "endsPattern": {
-            "regexp": "^\\[watch\\] build finished(.*)"
+            "regexp": "ERROR|Built (.*) in"
           }
         }
       }
