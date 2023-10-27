@@ -158,7 +158,10 @@ function files(directory: string): NextHandleFunction {
         {
           source: "**/*.{css,js,json}",
           headers: [
-            { key: "Cache-Control", value: "no-cache, no-store" }
+            {
+              key: "Cache-Control",
+              value: "no-cache, no-store"
+            }
           ]
         }
       ]
