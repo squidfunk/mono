@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.5 (2023-10-27)
+
+### Bug Fixes
+
+* 068d736 **mono-serve** - mitigate caching of assets during development
+
+
 ## 0.2.4 (2023-10-23)
 
 **Note:** Version bump only for package @squidfunk/mono-serve

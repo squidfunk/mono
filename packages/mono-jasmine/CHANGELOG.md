@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.7 (2023-10-27)
+
+**Note:** Version bump only for package @squidfunk/mono-jasmine
+
+
+
+
+
 ## 0.1.6 (2023-10-23)
 
 **Note:** Version bump only for package @squidfunk/mono-jasmine
