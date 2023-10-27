@@ -153,7 +153,15 @@ function internal(): NextHandleFunction {
 function files(directory: string): NextHandleFunction {
   return (req, res) => {
     void handler(req, res, {
-      public: directory
+      public: directory,
+      headers: [
+        {
+          source: "**/*.{css,js,json}",
+          headers: [
+            { key: "Cache-Control", value: "no-cache, no-store" }
+          ]
+        }
+      ]
     })
   }
 }
