@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-optimize",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Asset optimizer",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -37,7 +37,7 @@
     "html-minifier": "^4.0.0"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.4",
+    "@squidfunk/mono-transform": "^0.1.5",
     "@types/html-minifier": "^4.0.5"
   }
 }

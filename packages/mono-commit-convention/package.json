@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/mono-commit-convention",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Commit message convention",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^18.4.3",
-    "@squidfunk/mono-resolve": "^0.1.4"
+    "@squidfunk/mono-resolve": "^0.1.5"
   },
   "devDependencies": {
-    "@squidfunk/mono-transform": "^0.1.4"
+    "@squidfunk/mono-transform": "^0.1.5"
   }
 }

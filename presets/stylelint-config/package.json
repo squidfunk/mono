@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/stylelint-config",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Preset for Stylelint",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
@@ -42,8 +42,8 @@
     "stylelint-stylistic": "^0.4.3"
   },
   "devDependencies": {
-    "@squidfunk/mono-resolve": "^0.1.4",
-    "@squidfunk/mono-transform": "^0.1.4",
+    "@squidfunk/mono-resolve": "^0.1.5",
+    "@squidfunk/mono-transform": "^0.1.5",
     "stylelint": "^15.11.0"
   },
   "peerDependencies": {
