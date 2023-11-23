@@ -40,10 +40,10 @@
     "@squidfunk/mono-serve": "^0.2.5",
     "chalk": "^5.3.0",
     "commander": "^11.1.0",
-    "esbuild": "^0.19.5",
+    "esbuild": "^0.19.7",
     "glob": "^10.3.10",
     "rimraf": "^5.0.5",
-    "sass": "^1.69.4"
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "@squidfunk/mono-transform": "^0.1.4"

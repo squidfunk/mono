@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "@squidfunk/mono-transform": "^0.1.4",
-    "@types/html-minifier": "^4.0.4"
+    "@types/html-minifier": "^4.0.5"
   }
 }
