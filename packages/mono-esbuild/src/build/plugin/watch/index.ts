@@ -20,13 +20,22 @@
  * IN THE SOFTWARE.
  */
 
-export * from "./_"
-export * from "./clean"
-export * from "./obfuscate"
-export * from "./optimize"
-export * from "./resolve"
-export * from "./scope"
-export * from "./serve"
-export * from "./style"
-export * from "./watch"
-export * from "./web"
+import { Plugin } from "esbuild"
+
+/* ----------------------------------------------------------------------------
+ * Plugin
+ * ------------------------------------------------------------------------- */
+
+/**
+ * Watch plugin for esbuild
+ */
+export const WatchPlugin: Plugin = {
+  name: "squidfunk/watch",
+  setup(build) {
+
+    // Clear terminal on build start
+    build.onStart(() => {
+      console.clear()
+    })
+  }
+}

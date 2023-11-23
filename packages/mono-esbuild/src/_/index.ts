@@ -33,6 +33,7 @@ import {
   ObfuscatePlugin,
   ScopePlugin,
   ServePlugin,
+  WatchPlugin,
   contextAt,
   recommended
 } from "../build"
@@ -88,6 +89,10 @@ async function handler(
       platform,
       minify: options.minify
     })
+
+    // Option: watch affected files for changes
+    if (options.watch)
+      plugins.push(WatchPlugin)
 
     // Option: serve build artifacts on localhost
     if (options.serve)
