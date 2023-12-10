@@ -1,6 +1,6 @@
 {
   "name": "@squidfunk/stylelint-config",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Preset for Stylelint",
   "homepage": "https://github.com/squidfunk/mono",
   "bugs": {
