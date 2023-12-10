@@ -49,11 +49,6 @@ export const ServePlugin: Plugin = {
     // Initialize content hash table
     const table = new Map<string, string>()
 
-    // Clear terminal on build start
-    build.onStart(() => {
-      console.clear()
-    })
-
     // Compute changed files and notify clients
     build.onEnd(async ({ errors, metafile }) => {
       if (errors.length || !metafile)

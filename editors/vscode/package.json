@@ -33,7 +33,7 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "setup": "run-s build setup:*",
     "setup:vsce": "vsce package --no-dependencies --out dist",
-    "setup:code": "code-insiders --install-extension dist/*.vsix"
+    "setup:code": "code --install-extension dist/*.vsix"
   },
   "devDependencies": {
     "@squidfunk/mono-esbuild": "*",
