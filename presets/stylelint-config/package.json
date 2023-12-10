@@ -36,15 +36,15 @@
   "dependencies": {
     "postcss-scss": "^4.0.9",
     "stylelint-config-recess-order": "^4.4.0",
-    "stylelint-config-recommended": "^13.0.0",
-    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^35.0.0",
     "stylelint-scss": "^5.3.1",
     "stylelint-stylistic": "^0.4.3"
   },
   "devDependencies": {
     "@squidfunk/mono-resolve": "^0.1.5",
     "@squidfunk/mono-transform": "^0.1.5",
-    "stylelint": "^15.11.0"
+    "stylelint": "^16.0.1"
   },
   "peerDependencies": {
     "stylelint": "15.x"

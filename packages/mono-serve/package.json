@@ -46,7 +46,7 @@
     "http-terminator": "^3.2.0",
     "kebab-case": "^1.0.2",
     "serve-handler": "^6.1.5",
-    "ws": "^8.14.2"
+    "ws": "^8.15.0"
   },
   "devDependencies": {
     "@squidfunk/mono-transform": "^0.1.5",
