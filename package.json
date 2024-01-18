@@ -24,6 +24,7 @@
     "./presets/*"
   ],
   "scripts": {
+    "docs": "typedoc --entryPointStrategy packages 'packages/*'",
     "prepare": "run-s --npm-path npm prepare:*",
     "prepare:patch": "ts-patch install -s",
     "prepare:hooks": "husky install",
