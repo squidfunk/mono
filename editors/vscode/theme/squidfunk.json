@@ -261,10 +261,10 @@
       "scope": [
         "constant.character",
         "constant.escape",
+        "keyword.operator.access",
         "keyword.operator.assignment",
+        "keyword.operator.namespace",
         "keyword.operator.type",
-        "keyword.other.unit",
-        "keyword.other",
         "meta.function-call.arguments",
         "meta.jsx.children",
         "support.constant",
@@ -287,6 +287,7 @@
     {
       "name": "Storage",
       "scope": [
+        "keyword.other",
         "storage.type",
         "storage.modifier"
       ],
