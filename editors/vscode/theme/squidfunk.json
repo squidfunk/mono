@@ -262,7 +262,9 @@
         "constant.character",
         "constant.escape",
         "keyword.operator.access",
+        "keyword.operator.access.dot",
         "keyword.operator.assignment",
+        "keyword.operator.key-value",
         "keyword.operator.namespace",
         "keyword.operator.type",
         "meta.function-call.arguments",
@@ -685,6 +687,15 @@
       ],
       "settings": {
         "foreground": "#EEF3FF"
+      }
+    },
+    {
+      "name": "Markup - Underline",
+      "scope": [
+        "markup.underline"
+      ],
+      "settings": {
+        "fontStyle": "underline"
       }
     },
     {
