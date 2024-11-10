@@ -73,6 +73,7 @@
     "editorMarkerNavigationWarning.headerBackground": "#CCFF9020",
     "editorOverviewRuler.border": "#00000000",
     "editorRuler.foreground": "#BDDBFF16",
+    "editorStickyScrollHover.background": "#26303B",
     "editorSuggestWidget.background": "#26303B",
     "editorSuggestWidget.border": "#2B3643",
     "editorSuggestWidget.focusHighlightForeground": "#EEF3FF",
